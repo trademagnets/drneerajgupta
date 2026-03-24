@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Dr. Neeraj Gupta – About | Story & Gallery</title>
+  <title>Dr. Neeraj Gupta – Contact Us</title>
   <style>
     * {
       margin: 0;
@@ -100,7 +100,8 @@
       padding: 44px 48px;
     }
 
-    .section-img {
+    /* Images */
+    .contact-hero-img {
       width: 100%;
       max-width: 100%;
       height: auto;
@@ -111,105 +112,97 @@
       transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
     }
 
-    .section-img:hover {
+    .contact-hero-img:hover {
       transform: scale(1.01);
       border-color: rgba(227, 52, 47, 0.4);
       box-shadow: 0 25px 35px -12px rgba(227, 52, 47, 0.2);
     }
 
-    h1 {
-      font-size: 2.6rem;
-      font-weight: 600;
-      margin: 0 0 12px;
-      background: linear-gradient(135deg, #ffffff 0%, #e3342f 80%);
-      background-clip: text;
-      -webkit-background-clip: text;
-      color: transparent;
-      letter-spacing: -0.02em;
-    }
-
-    h2 {
-      font-size: 1.9rem;
-      font-weight: 600;
-      margin: 40px 0 20px;
-      color: #ffffff;
-      letter-spacing: -0.3px;
-      border-left: 4px solid #e3342f;
-      padding-left: 20px;
-    }
-
-    .story-block {
-      background: linear-gradient(145deg, #1e1e1e, #141414);
-      padding: 28px;
-      border-radius: 28px;
-      margin: 20px 0 30px;
-      border: 1px solid #2c2c2c;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-    }
-
-    .story-block p {
-      color: #e2e8f0;
-      margin-bottom: 1rem;
-      font-size: 1.05rem;
-    }
-
-    /* Vertical Gallery */
-    .vertical-gallery {
-      margin: 40px 0 30px;
-    }
-
-    .gallery-vertical-item {
-      margin-bottom: 32px;
-      border-radius: 28px;
-      overflow: hidden;
-      background: #1a1a1a;
-      border: 1px solid rgba(227, 52, 47, 0.3);
-      transition: all 0.3s ease;
-      box-shadow: 0 10px 20px -8px rgba(0, 0, 0, 0.5);
-    }
-
-    .gallery-vertical-item:hover {
-      transform: translateY(-5px);
-      border-color: #e3342f;
-      box-shadow: 0 20px 30px -12px rgba(227, 52, 47, 0.3);
-    }
-
-    .gallery-vertical-item img {
-      width: 100%;
-      height: auto;
-      display: block;
-      transition: transform 0.5s ease;
-    }
-
-    .gallery-vertical-item:hover img {
-      transform: scale(1.02);
-    }
-
-    .btn-register {
+    .btn-contact {
       display: inline-block;
       background: linear-gradient(105deg, #e3342f, #c72520);
       color: white;
       text-decoration: none;
       font-weight: 700;
-      font-size: 1.1rem;
-      padding: 14px 36px;
+      font-size: 1.2rem;
+      padding: 14px 40px;
       border-radius: 60px;
-      margin: 20px 0 12px;
+      margin: 20px 0 30px;
       border: none;
       cursor: pointer;
       box-shadow: 0 8px 18px rgba(227, 52, 47, 0.3);
       transition: all 0.25s ease;
       text-align: center;
+      letter-spacing: 0.5px;
     }
 
-    .btn-register:hover {
-      background: linear-gradient(105deg, #c72520, #a81f1a);
+    .btn-contact:hover {
       transform: translateY(-3px);
       box-shadow: 0 15px 25px -8px rgba(227, 52, 47, 0.5);
+      background: linear-gradient(105deg, #c72520, #a81f1a);
     }
 
-    .main-footer {
-      margin-top: 40px;
+    .address-block {
+      background: linear-gradient(145deg, #1e1e1e, #141414);
+      padding: 28px;
+      border-radius: 28px;
+      margin: 30px 0 30px;
+      border: 1px solid #2c2c2c;
+      text-align: center;
+    }
+
+    .address-block h3 {
+      font-size: 1.5rem;
+      margin-bottom: 16px;
+      color: #ffffff;
+    }
+
+    .address-block p {
+      font-size: 1.1rem;
+      color: #e2e8f0;
+      line-height: 1.6;
+    }
+
+    .map-section {
+      margin: 30px 0 20px;
+      background: #0a0a0a;
+      border-radius: 32px;
+      overflow: hidden;
+      border: 1px solid rgba(227, 52, 47, 0.3);
+    }
+
+    .map-container {
+      width: 100%;
+      height: 340px;
+    }
+
+    .map-container iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .contact-details {
+      margin: 20px 0 30px;
+      text-align: center;
+    }
+
+    .contact-details p {
+      margin: 8px 0;
+    }
+
+    .contact-details a {
+      color: #77b9ff;
+      text-decoration: none;
+      transition: 0.2s;
+    }
+
+    .contact-details a:hover {
+      color: #e3342f;
+    }
+
+    .footer {
+      margin-top: 50px;
       border-top: 1px solid rgba(227, 52, 47, 0.3);
       padding: 44px 0 24px;
     }
@@ -441,15 +434,13 @@
       color: #aaa;
     }
 
+    .text-center {
+      text-align: center;
+    }
+
     @media (max-width: 680px) {
       .page {
         padding: 28px 20px;
-      }
-      h1 {
-        font-size: 2.2rem;
-      }
-      h2 {
-        font-size: 1.6rem;
       }
       .nav-container {
         padding: 8px 16px;
@@ -467,6 +458,13 @@
         min-width: 120px;
         font-size: 0.9rem;
       }
+      .btn-contact {
+        font-size: 1rem;
+        padding: 12px 28px;
+      }
+      .address-block h3 {
+        font-size: 1.3rem;
+      }
     }
   </style>
 </head>
@@ -480,47 +478,49 @@
     </a>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
-      <li><a href="about.html" class="active-page">About</a></li>
+      <li><a href="about.html">About</a></li>
       <li><a href="counselling.html">Counselling</a></li>
-      <li><a href="contact.html">Contact</a></li>
+      <li><a href="contact.html" class="active-page">Contact</a></li>
     </ul>
   </div>
 </nav>
 
-<!-- About Page Content -->
+<!-- Main Content -->
 <div class="page">
-  <h1>Dr. Neeraj Gupta – My Journey</h1>
-  <img class="section-img" src="https://i.ibb.co/gMPSJydf/a98547-470b9a129bc4432ba40ea9a6dc9c2839-mv2.jpg" alt="Dr. Neeraj in Himalayas">
+  <!-- Top Image -->
+  <img class="contact-hero-img" src="https://i.ibb.co/Lzp704px/20e5671799c242d8b8faf5edc41c7311.jpg" alt="Dr. Neeraj Gupta Contact">
 
-  <div class="story-block">
-    <p style="font-size:1.1rem; margin-bottom:12px;">✨ <strong>I’m Dr. Neeraj Gupta from the foothills of the Himalayas.</strong> Despite a successful medical career, I felt unfulfilled—prescriptions only provided temporary relief, not true healing. The question <em>“How can I help people truly heal?”</em> grew louder until I could no longer ignore it. I left my practice to seek a deeper solution.</p>
-    <p style="margin:16px 0;">Under my enlightened Master, Dr. Ajay Kotwal, I discovered Spiritual Enlightenment, Mindfulness, Meditation, and Cosmic Consciousness. He taught me: <strong>Consciousness is everywhere; you are an ocean of Consciousness.</strong></p>
-    <p>Blending ancient wisdom with modern psychology, I developed holistic tools for healing. Now, I guide individuals to overcome suffering, find peace, and build resilience. Leaving medicine wasn’t easy, but it was right. Today, I don’t just treat symptoms—I empower people to heal from within and transform their lives.</p>
+  <!-- Contact Us Button (opens modal) -->
+  <div class="text-center">
+    <a href="#" class="btn-contact register-trigger">CONTACT US</a>
   </div>
 
-  <!-- Gallery Section: Images displayed one below the next (vertical) -->
-  <h2>📸 Our Gallery</h2>
-  <div class="vertical-gallery">
-    <div class="gallery-vertical-item">
-      <img src="https://i.ibb.co/9kyPTpSz/i2-orig-1.png" alt="Healing session with Dr. Neeraj">
-    </div>
-    <div class="gallery-vertical-item">
-      <img src="https://i.ibb.co/pvBfz7RK/1000062548.jpg" alt="Dr. Neeraj with client">
-    </div>
-    <div class="gallery-vertical-item">
-      <img src="https://i.ibb.co/BKVjRRxf/i1-2.png" alt="Meditation workshop">
-    </div>
-    <div class="gallery-vertical-item">
-      <img src="https://i.ibb.co/G6n4JHb/p2-1-orig-1.png" alt="Cosmic consciousness retreat">
+  <!-- Clinic Address Block -->
+  <div class="address-block">
+    <h3>📍 Our Clinic Address</h3>
+    <p>200 A/D, 1st Floor, Left Lane of Panch Mandir,<br>Gandhi Nagar, Jammu,<br>Jammu and Kashmir 180004</p>
+  </div>
+
+  <!-- Google Map - Exact location from provided link -->
+  <div class="map-section">
+    <div class="map-container">
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3379.849085215552!2d74.85796477560295!3d32.71052367366865!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391eeca674acd635%3A0xacd2f5c763a733db!2s200%20A%2FD%2C%201st%20Floor%20Left%20Lane%20of%20Panch%20Mandir%2C%20Gandhi%20Nagar%2C%20Jammu%2C%20Jammu%20and%20Kashmir%20180004!5e0!3m2!1sen!2sin!4v1742489130000!5m2!1sen!2sin" 
+        allowfullscreen="" 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
     </div>
   </div>
 
-  <div style="text-align: center; margin: 20px 0 10px;">
-    <a href="#" class="btn-register register-trigger">Start Your Healing Journey</a>
+  <!-- Contact Details - Updated Phone & WhatsApp numbers -->
+  <div class="contact-details">
+    <p><strong>📞 Phone:</strong> <a href="tel:+919419168378">+91 94191 68378</a></p>
+    <p><strong>💬 WhatsApp:</strong> <a href="https://wa.me/919419168378" target="_blank">Click to chat</a></p>
   </div>
 
   <!-- Footer -->
-  <footer class="main-footer">
+  <footer class="footer">
     <div class="footer-content">
       <div class="footer-nav">
         <h4>Quick Links</h4>
@@ -552,11 +552,11 @@
   </a>
 </div>
 
-<!-- Registration Modal -->
+<!-- Registration Modal (opens when Contact Us button is clicked) -->
 <div id="coachModal" class="modal-overlay">
   <div class="modal-container">
     <div class="modal-header">
-      <h3>✨ Connect for Counselling</h3>
+      <h3>✨ Get in Touch</h3>
       <button class="close-modal" id="closeModalBtn">&times;</button>
     </div>
     <form id="waRegistrationForm">
@@ -568,8 +568,8 @@
         <label>📱 WhatsApp Number</label>
         <input type="tel" id="userWhatsapp" placeholder="e.g., 9876543210" required autocomplete="tel">
       </div>
-      <button type="submit" class="submit-wa-btn">📩 Send details via WhatsApp</button>
-      <div class="modal-note">Your info will be shared with Dr. Neeraj on WhatsApp. You’ll be redirected to chat.</div>
+      <button type="submit" class="submit-wa-btn">📩 Send via WhatsApp</button>
+      <div class="modal-note">Your details will be shared with Dr. Neeraj on WhatsApp. You’ll be redirected to chat.</div>
     </form>
   </div>
 </div>
@@ -622,7 +622,7 @@
         userWhatsappInput.focus();
         return;
       }
-      const messageText = `🌟 NEW COUNSELLING ENQUIRY 🌟%0A%0A📛 Name: ${encodeURIComponent(fullName)}%0A📱 WhatsApp: ${encodeURIComponent(whatsappNumber)}%0A%0A🙏 Interested in one-on-one counselling. Please connect.`;
+      const messageText = `🌟 NEW ENQUIRY FROM WEBSITE 🌟%0A%0A📛 Name: ${encodeURIComponent(fullName)}%0A📱 WhatsApp: ${encodeURIComponent(whatsappNumber)}%0A%0A🙏 Interested in counselling services. Please connect.`;
       const whatsappUrl = `https://wa.me/${DOCTOR_WHATSAPP}?text=${messageText}`;
       window.open(whatsappUrl, '_blank');
       const submitBtn = document.querySelector('.submit-wa-btn');
