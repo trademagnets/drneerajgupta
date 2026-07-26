@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>🚀 You're In! Book Your Call</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <!-- Google Fonts: Inter for premium UI -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700&display=swap" rel="stylesheet" />
+    <style>
+        /* ----- RESET & BASE ----- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #080808;
+            padding: 1.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* ============================================================
+                   PREMIUM ANIMATED BACKGROUND
+                   ============================================================ */
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            pointer-events: none;
+            background:
+                /* Deep Red Core Glow */
+                radial-gradient(ellipse at 30% 40%, rgba(200, 0, 0, 0.15) 0%, transparent 55%),
+                /* Secondary Red Accent */
+                radial-gradient(ellipse at 70% 60%, rgba(220, 50, 50, 0.08) 0%, transparent 45%),
+                /* Warm Center Highlight */
+                radial-gradient(ellipse at 50% 70%, rgba(255, 200, 150, 0.03) 0%, transparent 40%),
+                /* Subtle White Ambient */
+                radial-gradient(ellipse at 20% 20%, rgba(255, 255, 255, 0.02) 0%, transparent 30%);
+            animation: ambientPulse 8s ease-in-out infinite alternate;
+        }
+
+        @keyframes ambientPulse {
+            0% {
+                opacity: 0.6;
+                transform: scale(1);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1.06);
+            }
+        }
+
+        /* Premium Animated Grid Overlay */
+        body::after {
+            content: '';
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            pointer-events: none;
+            background-image:
+                linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+            background-size: 60px 60px;
+            animation: gridFloat 14s linear infinite;
+            mask-image: radial-gradient(ellipse at 50% 50%, black, transparent 70%);
+            -webkit-mask-image: radial-gradient(ellipse at 50% 50%, black, transparent 70%);
+        }
+
+        @keyframes gridFloat {
+            0% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(60px);
+            }
+        }
+
+        /* Floating Particles (CSS only) */
+        .particles {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 50%;
+            animation: particleRise linear infinite;
+        }
+
+        .particle:nth-child(1) {
+            left: 10%;
+            animation-duration: 12s;
+            animation-delay: 0s;
+            width: 6px;
+            height: 6px;
+        }
+        .particle:nth-child(2) {
+            left: 25%;
+            animation-duration: 15s;
+            animation-delay: 2s;
+            width: 3px;
+            height: 3px;
+        }
+        .particle:nth-child(3) {
+            left: 45%;
+            animation-duration: 10s;
+            animation-delay: 4s;
+            width: 5px;
+            height: 5px;
+        }
+        .particle:nth-child(4) {
+            left: 65%;
+            animation-duration: 14s;
+            animation-delay: 1s;
+            width: 4px;
+            height: 4px;
+        }
+        .particle:nth-child(5) {
+            left: 85%;
+            animation-duration: 11s;
+            animation-delay: 3s;
+            width: 7px;
+            height: 7px;
+        }
+        .particle:nth-child(6) {
+            left: 50%;
+            animation-duration: 16s;
+            animation-delay: 5s;
+            width: 4px;
+            height: 4px;
+        }
+
+        @keyframes particleRise {
+            0% {
+                transform: translateY(100vh) scale(0);
+                opacity: 0;
+            }
+            20% {
+                opacity: 1;
+            }
+            80% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-10vh) scale(1);
+                opacity: 0;
+            }
+        }
+
+        /* ============================================================
+                   MAIN CARD (Ultra-Premium Glassmorphism)
+                   ============================================================ */
+        .thankyou-card {
+            position: relative;
+            z-index: 1;
+            max-width: 640px;
+            width: 100%;
+            background: rgba(8, 8, 8, 0.78);
+            backdrop-filter: blur(28px);
+            -webkit-backdrop-filter: blur(28px);
+            border-radius: 3.6rem;
+            padding: 3rem 3rem 2.8rem;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            box-shadow:
+                0 0 140px rgba(200, 0, 0, 0.04),
+                0 60px 120px -40px rgba(0, 0, 0, 0.9),
+                inset 0 1px 0 rgba(255, 255, 255, 0.04),
+                inset 0 -1px 0 rgba(255, 255, 255, 0.02);
+            animation: cardEntrance 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.6s ease;
+            overflow: hidden;
+        }
+
+        /* Animated Border Glow */
+        .thankyou-card::before {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            border-radius: 3.7rem;
+            padding: 1.5px;
+            background: conic-gradient(from 0deg,
+                    transparent,
+                    rgba(255, 50, 50, 0.06),
+                    transparent,
+                    rgba(255, 50, 50, 0.06),
+                    transparent);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            opacity: 0;
+            transition: opacity 0.8s ease;
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        .thankyou-card:hover::before {
+            opacity: 1;
+            animation: borderSpin 8s linear infinite;
+        }
+
+        @keyframes borderSpin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .thankyou-card:hover {
+            transform: translateY(-8px) scale(1.005);
+            box-shadow:
+                0 0 180px rgba(200, 0, 0, 0.06),
+                0 70px 140px -40px rgba(0, 0, 0, 0.9),
+                inset 0 1px 0 rgba(255, 255, 255, 0.06);
+        }
+
+        @keyframes cardEntrance {
+            0% {
+                opacity: 0;
+                transform: translateY(60px) scale(0.94);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        /* ============================================================
+                   ROCKET IMAGE (Premium & Dynamic)
+                   ============================================================ */
+        .image-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 0.8rem;
+            height: 150px;
+            position: relative;
+            z-index: 1;
+            animation: rocketFloat 4.5s ease-in-out infinite;
+        }
+
+        /* Glowing aura behind rocket */
+        .image-wrapper::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            width: 120%;
+            height: 60%;
+            background: radial-gradient(ellipse, rgba(200, 0, 0, 0.15), transparent 70%);
+            filter: blur(30px);
+            z-index: -1;
+            animation: auraPulse 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes auraPulse {
+            0% {
+                opacity: 0.5;
+                transform: scale(0.9);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1.1);
+            }
+        }
+
+        @keyframes rocketFloat {
+            0%,
+            100% {
+                transform: translateY(0) rotate(-0.5deg);
+            }
+            50% {
+                transform: translateY(-16px) rotate(0.5deg);
+            }
+        }
+
+        .image-wrapper svg {
+            width: 130px;
+            height: 150px;
+            filter: drop-shadow(0 0 80px rgba(200, 0, 0, 0.08));
+            transition: transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .thankyou-card:hover .image-wrapper svg {
+            transform: scale(1.04);
+        }
+
+        /* ============================================================
+                   TYPOGRAPHY (Bold, Expressive, Premium)
+                   ============================================================ */
+        h1 {
+            font-size: 4.6rem;
+            font-weight: 800;
+            color: #ffffff;
+            letter-spacing: -0.04em;
+            line-height: 1.0;
+            margin-bottom: 0.15rem;
+            text-shadow: 0 2px 40px rgba(0, 0, 0, 0.5);
+            position: relative;
+            z-index: 1;
+        }
+
+        .gradient-text {
+            font-size: 2.8rem; /* REDUCED SIZE */
+            font-weight: 900;
+            background: linear-gradient(135deg, #ff5a5a, #e60000, #990000);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: inline-block;
+            filter: drop-shadow(0 0 40px rgba(200, 0, 0, 0.10));
+            animation: gradientPulse 4s ease-in-out infinite alternate;
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+        }
+
+        @keyframes gradientPulse {
+            0% {
+                filter: drop-shadow(0 0 15px rgba(200, 0, 0, 0.05));
+            }
+            100% {
+                filter: drop-shadow(0 0 60px rgba(255, 0, 0, 0.15));
+            }
+        }
+
+        .subhead {
+            font-size: 1.2rem;
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.6);
+            margin-top: 0.3rem;
+            margin-bottom: 1rem;
+            letter-spacing: 0.4px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .subhead .emoji-icon {
+            display: inline-block;
+            animation: iconPulse 2.8s ease-in-out infinite;
+        }
+
+        @keyframes iconPulse {
+            0%,
+            100% {
+                transform: scale(1);
+                opacity: 0.6;
+            }
+            50% {
+                transform: scale(1.2);
+                opacity: 1;
+            }
+        }
+
+        /* ============================================================
+                   CALLOUT BADGE (Exclusive & Urgent)
+                   ============================================================ */
+        .callout {
+            font-size: 1.65rem;
+            font-weight: 700;
+            color: #ffffff;
+            background: linear-gradient(135deg, rgba(180, 0, 0, 0.18), rgba(40, 0, 0, 0.30));
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            padding: 0.6rem 2.4rem;
+            border-radius: 100px;
+            margin: 0.4rem 0 1.4rem;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(12px);
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+            letter-spacing: -0.01em;
+            box-shadow: 0 0 80px rgba(255, 255, 255, 0.01);
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .callout::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.04), transparent);
+            transform: translateX(-100%);
+            animation: shimmerSlow 5s ease-in-out infinite;
+        }
+
+        @keyframes shimmerSlow {
+            0% {
+                transform: translateX(-100%);
+            }
+            50% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(100%);
+            }
+        }
+
+        .callout .emoji {
+            font-size: 1.7rem;
+            animation: emojiFloat 2.4s ease-in-out infinite;
+        }
+
+        @keyframes emojiFloat {
+            0%,
+            100% {
+                transform: translateY(0) scale(1);
+            }
+            50% {
+                transform: translateY(-4px) scale(1.08);
+            }
+        }
+
+        /* Exclusive Tag */
+        .exclusive-tag {
+            display: inline-block;
+            font-size: 0.65rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: rgba(255, 215, 150, 0.4);
+            background: rgba(255, 215, 150, 0.04);
+            padding: 0.2rem 1.2rem;
+            border-radius: 40px;
+            border: 1px solid rgba(255, 215, 150, 0.06);
+            margin-bottom: 0.6rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ============================================================
+                   DIVIDER (Elegant & Animated)
+                   ============================================================ */
+        .divider {
+            width: 80px;
+            height: 2px;
+            background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.12), #ff3333, #cc0000, rgba(255, 255, 255, 0.12), transparent);
+            border-radius: 4px;
+            margin: 1.2rem auto 2rem;
+            box-shadow: 0 0 60px rgba(200, 0, 0, 0.08);
+            animation: dividerPulse 4s ease-in-out infinite alternate;
+            position: relative;
+            z-index: 1;
+        }
+
+        @keyframes dividerPulse {
+            0% {
+                opacity: 0.4;
+                transform: scaleX(0.7);
+            }
+            100% {
+                opacity: 1;
+                transform: scaleX(1);
+                box-shadow: 0 0 80px rgba(255, 0, 0, 0.12);
+            }
+        }
+
+        /* ============================================================
+                   PRIMARY CTA (Irresistible & Premium)
+                   ============================================================ */
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.9rem;
+            padding: 1.3rem 3.2rem;
+            border-radius: 100px;
+            font-weight: 700;
+            font-size: 1.25rem;
+            text-decoration: none;
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            border: none;
+            cursor: pointer;
+            background: linear-gradient(145deg, #e60000, #990000);
+            color: #fff;
+            box-shadow:
+                0 20px 60px -12px rgba(200, 0, 0, 0.5),
+                inset 0 1px 0 rgba(255, 255, 255, 0.12);
+            width: 100%;
+            max-width: 420px;
+            letter-spacing: 0.4px;
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        /* Shimmer layer */
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.08), transparent);
+            transform: translateX(-100%);
+            transition: transform 0.7s ease;
+            z-index: 2;
+        }
+
+        .btn-primary:hover::before {
+            transform: translateX(100%);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-6px) scale(1.015);
+            box-shadow:
+                0 28px 70px -12px rgba(200, 0, 0, 0.7),
+                0 0 120px rgba(255, 0, 0, 0.06);
+            background: linear-gradient(145deg, #ff1a1a, #aa0000);
+        }
+
+        .btn-primary:active {
+            transform: scale(0.97);
+        }
+
+        .btn-primary i,
+        .btn-primary .emoji {
+            font-size: 1.3rem;
+            transition: transform 0.4s ease;
+            color: #fff;
+            position: relative;
+            z-index: 3;
+        }
+
+        .btn-primary:hover i,
+        .btn-primary:hover .emoji {
+            transform: translateX(4px) scale(1.08);
+        }
+
+        /* Premium Glow Ring on Hover */
+        .btn-primary::after {
+            content: '';
+            position: absolute;
+            inset: -4px;
+            border-radius: 104px;
+            padding: 2px;
+            background: conic-gradient(from 0deg, transparent, rgba(255, 255, 255, 0.15), transparent, rgba(255, 255, 255, 0.15), transparent);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            opacity: 0;
+            transition: opacity 0.6s ease;
+            z-index: 0;
+        }
+
+        .btn-primary:hover::after {
+            opacity: 1;
+            animation: borderSpin 4s linear infinite;
+        }
+
+        /* ============================================================
+                   RESPONSIVE (Refined & Perfect)
+                   ============================================================ */
+        @media (max-width: 640px) {
+            .thankyou-card {
+                padding: 2.2rem 1.8rem 2.2rem;
+                border-radius: 2.6rem;
+            }
+
+            h1 {
+                font-size: 3.4rem;
+            }
+
+            .gradient-text {
+                font-size: 2.2rem; /* REDUCED SIZE */
+            }
+
+            .image-wrapper {
+                height: 120px;
+                margin-bottom: 0.6rem;
+            }
+
+            .image-wrapper svg {
+                width: 100px;
+                height: 120px;
+            }
+
+            .callout {
+                font-size: 1.2rem;
+                padding: 0.4rem 1.6rem;
+                gap: 0.4rem;
+            }
+
+            .callout .emoji {
+                font-size: 1.4rem;
+            }
+
+            .btn-primary {
+                font-size: 1.05rem;
+                padding: 1.1rem 1.8rem;
+                max-width: 100%;
+            }
+
+            .btn-primary i,
+            .btn-primary .emoji {
+                font-size: 1.05rem;
+            }
+
+            .subhead {
+                font-size: 1rem;
+            }
+
+            .exclusive-tag {
+                font-size: 0.55rem;
+                padding: 0.15rem 1rem;
+            }
+        }
+
+        @media (max-width: 420px) {
+            .thankyou-card {
+                padding: 1.6rem 1.2rem 1.8rem;
+                border-radius: 2rem;
+            }
+
+            h1 {
+                font-size: 2.8rem;
+            }
+
+            .gradient-text {
+                font-size: 1.8rem; /* REDUCED SIZE */
+            }
+
+            .image-wrapper {
+                height: 100px;
+                margin-bottom: 0.4rem;
+            }
+
+            .image-wrapper svg {
+                width: 80px;
+                height: 100px;
+            }
+
+            .callout {
+                font-size: 1.0rem;
+                padding: 0.3rem 1.2rem;
+                gap: 0.3rem;
+                border-radius: 60px;
+            }
+
+            .callout .emoji {
+                font-size: 1.1rem;
+            }
+
+            .btn-primary {
+                font-size: 0.9rem;
+                padding: 0.9rem 1.2rem;
+                gap: 0.5rem;
+                border-radius: 60px;
+            }
+
+            .btn-primary i,
+            .btn-primary .emoji {
+                font-size: 0.9rem;
+            }
+
+            .subhead {
+                font-size: 0.85rem;
+            }
+
+            .divider {
+                width: 50px;
+                margin: 1rem auto 1.4rem;
+            }
+
+            .exclusive-tag {
+                font-size: 0.5rem;
+                padding: 0.1rem 0.8rem;
+                margin-bottom: 0.4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Floating Particles -->
+    <div class="particles">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
+
+    <div class="thankyou-card" role="main" aria-label="Action confirmed — book your call">
+
+        <!-- 1. ROCKET (Premium & Animated) -->
+        <div class="image-wrapper">
+            <svg viewBox="0 0 180 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="bodyGrad" x1="0" y1="0" x2="1" y2="0">
+                        <stop offset="0%" stop-color="#d4d4d4"/>
+                        <stop offset="50%" stop-color="#ffffff"/>
+                        <stop offset="100%" stop-color="#b8b8b8"/>
+                    </linearGradient>
+                    <linearGradient id="noseGrad" x1="0" y1="0" x2="1" y2="0">
+                        <stop offset="0%" stop-color="#ff5555"/>
+                        <stop offset="40%" stop-color="#cc0000"/>
+                        <stop offset="100%" stop-color="#880000"/>
+                    </linearGradient>
+                    <linearGradient id="finGrad" x1="0" y1="0" x2="1" y2="1">
+                        <stop offset="0%" stop-color="#cc0000"/>
+                        <stop offset="100%" stop-color="#660000"/>
+                    </linearGradient>
+                    <linearGradient id="flameOuter" x1="0.5" y1="0" x2="0.5" y2="1">
+                        <stop offset="0%" stop-color="#ff7700"/>
+                        <stop offset="40%" stop-color="#ff3300"/>
+                        <stop offset="100%" stop-color="transparent"/>
+                    </linearGradient>
+                    <linearGradient id="flameInner" x1="0.5" y1="0" x2="0.5" y2="1">
+                        <stop offset="0%" stop-color="#ffff44"/>
+                        <stop offset="60%" stop-color="#ffbb00"/>
+                        <stop offset="100%" stop-color="transparent"/>
+                    </linearGradient>
+                    <linearGradient id="glowBlue" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0%" stop-color="#44ffff"/>
+                        <stop offset="100%" stop-color="#0066ff"/>
+                    </linearGradient>
+                    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+                        <feGaussianBlur stdDeviation="5" result="blur"/>
+                        <feMerge>
+                            <feMergeNode in="blur"/>
+                            <feMergeNode in="SourceGraphic"/>
+                        </feMerge>
+                    </filter>
+                </defs>
+
+                <!-- Shadow -->
+                <ellipse cx="90" cy="190" rx="42" ry="6" fill="rgba(0,0,0,0.35)" />
+
+                <!-- Exhaust Flames (Advanced Animation) -->
+                <g transform="translate(90, 155)">
+                    <path d="M -20 0 Q -28 22 0 55 Q 28 22 20 0 Z" fill="url(#flameOuter)" opacity="0.7">
+                        <animateTransform attributeName="transform" type="scale" values="1 1; 1 0.80; 1 1" dur="0.35s" repeatCount="indefinite"/>
+                    </path>
+                    <path d="M -14 0 Q -18 16 0 44 Q 18 16 14 0 Z" fill="#ff9900" opacity="0.85">
+                        <animateTransform attributeName="transform" type="scale" values="1 1; 1 0.85; 1 1" dur="0.28s" repeatCount="indefinite"/>
+                    </path>
+                    <path d="M -7 0 Q -9 10 0 32 Q 9 10 7 0 Z" fill="url(#flameInner)">
+                        <animateTransform attributeName="transform" type="scale" values="1 1; 1 0.75; 1 1" dur="0.22s" repeatCount="indefinite"/>
+                    </path>
+                    <!-- Sparks -->
+                    <circle cx="-12" cy="28" r="2.5" fill="#ffff44" opacity="0.5">
+                        <animate attributeName="cy" values="28; 48" dur="0.6s" repeatCount="indefinite"/>
+                        <animate attributeName="opacity" values="0.7; 0" dur="0.6s" repeatCount="indefinite"/>
+                    </circle>
+                    <circle cx="14" cy="22" r="2" fill="#ffaa00" opacity="0.5">
+                        <animate attributeName="cy" values="22; 42" dur="0.5s" repeatCount="indefinite"/>
+                        <animate attributeName="opacity" values="0.7; 0" dur="0.5s" repeatCount="indefinite"/>
+                    </circle>
+                    <circle cx="0" cy="35" r="1.5" fill="#ff6600" opacity="0.4">
+                        <animate attributeName="cy" values="35; 50" dur="0.45s" repeatCount="indefinite"/>
+                        <animate attributeName="opacity" values="0.6; 0" dur="0.45s" repeatCount="indefinite"/>
+                    </circle>
+                </g>
+
+                <!-- Engine Nozzle -->
+                <path d="M 76 145 L 104 145 L 110 160 L 70 160 Z" fill="#2a2a2a" stroke="#444" stroke-width="1.5"/>
+                <path d="M 73 160 L 107 160 L 103 166 L 77 166 Z" fill="#1a1a1a"/>
+
+                <!-- Fins -->
+                <path d="M 78 108 L 35 145 L 42 152 L 78 146 Z" fill="url(#finGrad)" stroke="#770000" stroke-width="1"/>
+                <path d="M 102 108 L 145 145 L 138 152 L 102 146 Z" fill="url(#finGrad)" stroke="#770000" stroke-width="1"/>
+                <path d="M 87 130 L 93 152 L 87 152 Z" fill="#550000"/>
+
+                <!-- Main Body -->
+                <path d="M 76 95 L 76 145 Q 90 152 104 145 L 104 95 Z" fill="url(#bodyGrad)" stroke="#cccccc" stroke-width="0.5"/>
+
+                <!-- Body Stripes -->
+                <rect x="78" y="118" width="24" height="3" fill="#cc0000" rx="1.5"/>
+                <rect x="78" y="126" width="24" height="3" fill="#cc0000" rx="1.5"/>
+                <rect x="78" y="134" width="24" height="3" fill="#cc0000" rx="1.5"/>
+
+                <!-- Nose Cone -->
+                <path d="M 76 95 Q 76 48 90 18 Q 90 13 90 8 Q 90 13 90 18 Q 104 48 104 95 Z" fill="url(#noseGrad)" stroke="#770000" stroke-width="1"/>
+
+                <!-- Nose Highlight -->
+                <path d="M 90 8 Q 84 42 82 62" stroke="#ff7777" stroke-width="1.5" fill="none" opacity="0.3"/>
+
+                <!-- Window (Glowing) -->
+                <circle cx="90" cy="63" r="16" fill="#111122" stroke="#555" stroke-width="2"/>
+                <circle cx="90" cy="63" r="14" fill="url(#glowBlue)" filter="url(#glow)" opacity="0.7"/>
+                <path d="M 83 56 Q 88 54 93 56 Q 88 58 83 56 Z" fill="rgba(255,255,255,0.5)"/>
+                <path d="M 81 66 Q 85 64 89 66 Q 85 68 81 66 Z" fill="rgba(255,255,255,0.2)"/>
+
+                <!-- Rivets -->
+                <circle cx="76" cy="103" r="1.5" fill="#999"/>
+                <circle cx="104" cy="103" r="1.5" fill="#999"/>
+                <circle cx="76" cy="111" r="1.5" fill="#999"/>
+                <circle cx="104" cy="111" r="1.5" fill="#999"/>
+            </svg>
+        </div>
+
+        <!-- 2. EXCLUSIVE TAG -->
+        <div class="exclusive-tag">✦ Exclusive Access</div>
+
+        <!-- 3. HEADING (Refined Hierarchy) -->
+        <h1>
+            Congratulations! <br />
+            <span class="gradient-text">For Taking Action! 🔥</span>
+        </h1>
+
+        <!-- 4. SUBHEAD -->
+        <p class="subhead">
+            <span class="emoji-icon">🔒</span> You're locked in. <span class="emoji-icon">⚡</span>
+        </p>
+
+        <!-- 5. CALLOUT BADGE -->
+        <div class="callout">
+            <span class="emoji">🗓️</span>
+            Be Ready For The 1:1 Live Call...
+            <span class="emoji">🚀</span>
+        </div>
+
+        <!-- 6. DIVIDER -->
+        <div class="divider" aria-hidden="true"></div>
+
+        <!-- 7. PRIMARY CTA BUTTON (Clean & Focused) -->
+        <a href="https://calendly.com/drneerajgupta/meeting?month=2025-02" target="_blank" class="btn-primary">
+            <span class="emoji">📞</span>
+            Book Your Call Here
+            <i class="fas fa-arrow-right" aria-hidden="true"></i>
+        </a>
+
+        <!-- NOTHING BELOW THIS LINE -->
+    </div>
+
+</body>
+</html>
